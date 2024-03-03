@@ -5,7 +5,7 @@ This repo is a server to offer a service to
 - Get the photo of the artist of a album based on the album's id.
 
 ## Pre-requisites
-- Get your spotify api client id and secret by checking [here](https://developer.spotify.com/documentation/web-api/concepts/apps). Then put it in the `internal/spotify_api.py` file.
+- Get your spotify api client id and secret by checking [here](https://developer.spotify.com/documentation/web-api/concepts/apps). Then put it in the `internal_spotify_api.py` file.
 - Install flask by running `pip install flask`.
 
 ## How to programmatically REQUEST and RECEIVE data
