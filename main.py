@@ -12,7 +12,7 @@ def api_search_album(album_name):
     album_search_info = search_album(album_name)
     search_album_names = []
     for album in album_search_info['albums']['items']:
-        search_album_names.append({"album_name": album['name'], "album_id": album['id']})
+        search_album_names.append({"album_name": album['name'], "album_id": album['id'], "album_artist": album['artists']})
     return jsonify(search_album_names)
     # return jsonify(message=f'Search results are: {search_als
 
