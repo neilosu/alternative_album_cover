@@ -55,8 +55,6 @@ This repo is a server to offer a service to
   - Send a GET request to `http://127.0.0.1:5000/get_artist_photo/ + album_id`
     - Sample response is a image file.
 
-Check the `test.py` file to see how to use the service for more details.
-
 ## UML Sequence Diagram
 ```mermaid
 sequenceDiagram
@@ -72,4 +70,10 @@ sequenceDiagram
     Program->>Microservice: (GET) /get_album_artist_image/ + album_id
     Microservice-->>Program: file (artist image file)
 
+```
+
+## Example script to use the service
+An example of usage script is in the `test.py` file. You can run it by 
+```
+python test.py
 ```
