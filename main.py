@@ -19,8 +19,16 @@ def api_search_album(album_name):
 @app.route('/get_album_cover_image/<album_id>')
 def api_get_album_cover_image(album_id):
     album_info = get_album_info(album_id)
-    album_image = get_album_cover_image(album_info, file_save_path = "album_cover.jpg")
-    return send_file(album_image, mimetype='image/jpeg')
+    save_album_cover_image(album_info)
+    return send_file(ALBUM_COVER_IMAGE_DEFAULT_PATH, mimetype='image/jpeg')
+
+@app.route('/get_album_artist_image/<album_id>')
+def api_get_album_artist_image(album_id):
+    album_info = get_album_info(album_id)
+    artist_id, artist_name = get_album_artist(album_info)
+    artist_info = get_artist_info(artist_id)
+    save_artist_image(artist_info)
+    return send_file(ARTIST_IMAGE_DEFAULT_PATH, mimetype='image/jpeg')
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True, host='127.0.0.1', port=5000)
