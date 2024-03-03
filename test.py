@@ -1,6 +1,5 @@
 import requests
 import json
-import base64
 
 def test_search_album():
     album_name = "Dangerous"

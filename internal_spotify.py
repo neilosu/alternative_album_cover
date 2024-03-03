@@ -2,7 +2,7 @@ import requests
 import json
 import base64
 
-CLIENT_ID = "4d4b053a809a434ebeb8b1446b4d8963"
+CLIENT_ID = ""
 CLIENT_SECRET = ""
 ALBUM_NAME = "Global Warming"
 ALBUM_COVER_IMAGE_DEFAULT_PATH = "album_cover.jpg"
