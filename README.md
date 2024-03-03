@@ -6,7 +6,7 @@ This repo is a server to offer a service to
 
 ## How to programmatically REQUEST and RECEIVE data
 - search_album
-  - Send a GET request to `http://127.0.0.1:5000/search_album/" + album_name`
+  - Send a GET request to `http://127.0.0.1:5000/search_album/ + album_name`
   - Sample response:
     ```json
     [
@@ -45,10 +45,10 @@ This repo is a server to offer a service to
     ]
     ```
 - get album cover
-  - Send a GET request to `http://127.0.0.1:5000/get_album_cover/" + album_id`
+  - Send a GET request to `http://127.0.0.1:5000/get_album_cover/ + album_id`
     - Sample response is a image file.
 - get artist photo of album
-  - Send a GET request to `http://127.0.0.1:5000/get_artist_photo/" + album_id`
+  - Send a GET request to `http://127.0.0.1:5000/get_artist_photo/ + album_id`
     - Sample response is a image file.
 
 Check the `test.py` file to see how to use the service for more details.
