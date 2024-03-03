@@ -28,12 +28,13 @@ def get_album_info(album_id):
     dict_response = json.loads(json_string)
     return dict_response
 
-def save_album_cover_image(album_info, file_save_path = "album_cover.jpg"):
+def get_album_cover_image(album_info, file_save_path = "album_cover.jpg"):
     print("Saving album cover image to: " + file_save_path)
     album_cover_image_url = album_info['images'][0]['url']
     album_cover_image = requests.get(album_cover_image_url).content
     with open(file_save_path, 'wb') as file:
         file.write(album_cover_image)
+    return album_cover_image
 
 def get_album_artist(album_info):
     artist_id = album_info['artists'][0]['id']
@@ -46,12 +47,13 @@ def get_artist_info(artist_id):
     dict_response = json.loads(json_string)
     return dict_response
 
-def save_artist_image(artist_info, file_save_path = "artist_image.jpg"):
+def get_artist_image(artist_info, file_save_path = "artist_image.jpg"):
     print("Saving artist image to: " + file_save_path)
     artist_image_url = artist_info['images'][0]['url']
     artist_image = requests.get(artist_image_url).content
     with open(file_save_path, 'wb') as file:
         file.write(artist_image)
+    return artist_image
 
 def search_album(album_name, result_limit = 5):
     print("Searching for album: " + album_name)
@@ -73,7 +75,7 @@ if __name__ == '__main__':
     album_search_info = search_album(album_name)
     album_id = get_album_id(album_search_info)
     album_info = get_album_info(album_id)
-    save_album_cover_image(album_info, file_save_path = "album_cover.jpg")
+    get_album_cover_image = get_album_cover_image(album_info, file_save_path = "album_cover.jpg")
     artist_id, artist_name = get_album_artist(album_info)
     artist_info = get_artist_info(artist_id)
-    save_artist_image(artist_info, file_save_path = "artist_image.jpg")
+    artist_image = get_artist_image(artist_info, file_save_path = "artist_image.jpg")
