@@ -53,3 +53,19 @@ This repo is a server to offer a service to
 
 Check the `test.py` file to see how to use the service for more details.
 
+## UML Sequence Diagram
+```mermaid
+sequenceDiagram
+    participant Program as Program making a request
+    participant Microservice as Microservice
+
+    Program->>Microservice: (GET) /search_album/ + album_name
+    Microservice-->>Program: List (album results)
+
+    Program->>Microservice: (GET) /get_album_cover/ + album_id
+    Microservice-->>Program: file (album cover image file)
+
+    Program->>Microservice: (GET) /get_album_artist_image/ + album_id
+    Microservice-->>Program: file (artist image file)
+
+```
